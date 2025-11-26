@@ -25,14 +25,52 @@
             text-shadow: 3px 3px 10px black;
         }
     </style>
+	/* Music bar */
+    .music-bar {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 200px;
+    font-weight: bold;
+    animation: slideIn 1s ease-out;
+    }
+
+    @keyframes slideIn {
+    from {
+        transform: translateX(-150%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
 </head>
 <body>
+<div class="music-bar" id="musicBar">
+    ♪ Battlefield
+</div>
 
     <img src="SSF2_NR.png" class="logo">
 
     <div class="coming">
         Coming Soon...
     </div>
+    <script>
+function setSong(name) {
+    document.getElementById("musicBar").innerText = "♪ " + name;
+}
 
+// Example: change song after 5 seconds
+setTimeout(() => {
+    setSong("Final Showdown");
+}, 5000);
+</script>
 </body>
 </html>
